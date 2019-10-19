@@ -1,3 +1,4 @@
-var obj = require('../mod/b.js')
+let Toast = require('../mod/toast.js').Toast
 
-console.log(obj)
+
+Toast('hello-moreka', 300000)
