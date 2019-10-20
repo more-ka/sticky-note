@@ -1,4 +1,4 @@
 let Toast = require('../mod/toast.js').Toast
 
 
-Toast('hello-moreka', 300000)
+Toast('hello-moreka', 3000)
