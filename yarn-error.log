@@ -1,0 +1,56 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add node-inspector
+
+PATH: 
+  C:\Users\卡布\local;C:\Users\卡布\bin;D:\combu\Git\mingw64\bin;D:\combu\Git\usr\local\bin;D:\combu\Git\usr\bin;D:\combu\Git\usr\bin;D:\combu\Git\mingw64\bin;D:\combu\Git\usr\bin;C:\Users\卡布\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\python36;C:\python36\Scrapy;D:\mongodb\bin;D:\Redis;D:\Anaconda3\phantomjs\bin;D:\combu\Git\cmd;D:\combu\Git\mingw64\bin;D:\combu\Git\usr\bin;D:\combu\nodejs\node.exe;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;D:\combu\Microsoft VS Code\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0;%SYSTEMROOT%\System32\OpenSSH;C:\python36\Scripts;C:\python36;C:\Users\卡布\AppData\Local\Microsoft\WindowsApps;C:\python27;C:\python27\Scripts;C:\Program Files (x86)\Microsoft VS Code\bin;D:\combu\Microsoft VS Code\bin;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Users\卡布\AppData\Local\Yarn\bin;C:\Users\卡布\AppData\Roaming\npm;D:\combu\Git\usr\bin\vendor_perl;D:\combu\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\HTML\2019\stciky-note\node_modules\sqlite3\lib\binding\node-v64-win32-x64\node_sqlite3.node'
+
+npm manifest: 
+  {
+    "name": "stciky-note",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "start": "node ./bin/www",
+      "webpack": "webpack --config ./src/webpack.config.js",
+      "watch": "onchange \"src/**/*.js\" \"src/**/*.less\" -- npm run webpack"
+    },
+    "dependencies": {
+      "cookie-parser": "~1.4.4",
+      "css-loader": "^3.2.0",
+      "debug": "~2.6.9",
+      "ejs": "~2.6.1",
+      "express": "~4.16.1",
+      "http-errors": "~1.6.3",
+      "less": "^3.10.3",
+      "less-loader": "^5.0.0",
+      "morgan": "~1.9.1",
+      "postcss-loader": "^3.0.0",
+      "sequelize": "^5.21.1",
+      "sqlite3": "^4.1.0",
+      "style-loader": "^1.0.0"
+    },
+    "devDependencies": {
+      "extract-text-webpack-plugin": "^4.0.0-beta.0",
+      "onchange": "^6.1.0",
+      "webpack": "^4.41.2",
+      "webpack-cli": "^3.3.9"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

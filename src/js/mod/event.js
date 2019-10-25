@@ -1,16 +1,10 @@
-var EventCenter = function(){
+var EventCenter = (function(){
   var events = {}
-  console.log(events)
   function on(event,handler){
     events[event] = events[event] || []
     events[event].push({
       handler:handler
     })
-    // {
-    //   click: Array(2)
-    //     0: {handler: "s"}
-    //     1: {handler: "5"}
-    // }
   }
   function fire(event,args){
     if(!events[event]){
@@ -20,16 +14,19 @@ var EventCenter = function(){
       events[event][i].handler(args)
     }
   }
-
   return {
     on: on,
     fire: fire
   }
-}
-window.EventCenter = EventCenter
+})()
 module.exports = EventCenter
+// window.EventCenter = EventCenter
 
-
+    // {
+    //   click: Array(2)
+    //     0: {handler: "s"}
+    //     1: {handler: "5"}
+    // }
   // EventCenter.on('text-change', function(data){
   //  console.log(data);
   // });

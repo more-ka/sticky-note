@@ -35,8 +35,7 @@ Note.prototype = {
   createNote: function () {
     var tpl =  '<div class="note">'
               + '<div class="note-head"><span class="username"></span><span class="delete">&times;</span></div>'
-              + '<div class="note-ct" contenteditable="true"></div>'
-              +'</div>';
+              + '<div class="note-ct" contenteditable="true"></div>'+'</div>';
     this.$note = $(tpl);
     this.$note.find('.note-ct').text(this.opts.context);
     this.$note.find('.username').text(this.opts.username);
@@ -111,7 +110,7 @@ Note.prototype = {
         note: msg
       }).done(function(ret){
       if(ret.status === 0){
-        Toast('update success');
+        Toast('更新成功');
       }else{
         Toast(ret.errorMsg);
       }
@@ -119,12 +118,11 @@ Note.prototype = {
   },
 
   add: function (msg){
-    console.log('addd...');
     var self = this;
     $.post('/api/notes/add', {note: msg})
       .done(function(ret){
         if(ret.status === 0){
-          Toast('add success');
+          Toast('添加成功');
         }else{
           self.$note.remove();
           Event.fire('waterfall')
@@ -139,7 +137,7 @@ Note.prototype = {
     $.post('/api/notes/delete', {id: this.id})
       .done(function(ret){
         if(ret.status === 0){
-          Toast('delete success');
+          Toast('删除成功');
           self.$note.remove();
           Event.fire('waterfall')
         }else{
