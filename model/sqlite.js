@@ -20,14 +20,14 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
 
 // 确定数据类型
 const Note = sequelize.define("note", {
-  text: {
+  text:Sequelize.STRING,
+  userId: {
     type: Sequelize.STRING
   },
-  userId: {
-    type: Sequelize.NUMBER  
-  }
+  createTime: Sequelize.STRING
 });
 // {force:true}
+
 // Note.sync({force:true})
 //   .then(() => {
 //     Note.create({

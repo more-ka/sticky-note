@@ -14,7 +14,8 @@ var NoteManager = (function(){
               new Note({
                 id: article.id,
                 context: article.text,
-                username: article.username
+                username: article.username,
+                time: article.createTime
               });
           });
 
