@@ -21,12 +21,14 @@ const sequelize = new Sequelize(undefined, undefined, undefined, {
 // 确定数据类型
 const Note = sequelize.define("note", {
   text: {
-    type: Sequelize.STRING,
-    allowNull: false
+    type: Sequelize.STRING
+  },
+  userId: {
+    type: Sequelize.NUMBER  
   }
 });
 // {force:true}
-// Note.sync()
+// Note.sync({force:true})
 //   .then(() => {
 //     Note.create({
 //       text: "数据库里的数据"

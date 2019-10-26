@@ -3,18 +3,12 @@ var router = express.Router();
 var passport = require("passport");
 var GitHubStrategy = require("passport-github").Strategy
 
-// app.use(session({secret: 'sessionsecret'}));
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 /* GET auth. */
 passport.serializeUser(function(user, done) {
-  console.log("serializeUser", user);
-
   done(null, user);
 });
 passport.deserializeUser(function(obj, done) {
-  console.log("deserializeUser", obj);
   done(null, obj);
 });
 router.get("/logout", function(req, res) {
