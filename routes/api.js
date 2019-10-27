@@ -20,14 +20,13 @@ router.get("/notes", function(req, res, next) {
     });
 });
 router.post("/notes/add", function(req, res, next) {
-  // if(!req.session.user){
-  //   return res.send({status: 1,errorMsg: '请登录'})
-  // }
+  if (!req.session.user) {
+    return res.send({ status: 1, errorMsg: "请登录" });
+  }
+  var userId = req.session.user.id;
   let getTime = function(){
     var myDate = new Date();
-    function getNow(s) {
-      return s < 10 ? '0' + s: s;
-      }
+    function getNow(s) { return s < 10 ? '0' + s: s; }
     var year = myDate.getFullYear(); //获取当前年
     var month = myDate.getMonth() + 1; //获取当前月
     var date = myDate.getDate(); //获取当前日
@@ -37,8 +36,6 @@ router.post("/notes/add", function(req, res, next) {
     let createTime = year + "年" + month + "月" + date + "日"+' '+getNow(Hours)+':'+getNow(Minutes)+':'+getNow(Seconds)
     return createTime
   }
-  var userId = req.session.user.id;
-  console.log(getTime);
   Note.create({ text: req.body.note, userId: userId, createTime: getTime() })
     .then(function() {
       res.send({ status: 0 });

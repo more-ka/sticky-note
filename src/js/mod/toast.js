@@ -27,5 +27,4 @@ toast.prototype = {
 function Toast(msg,time){
   return new toast(msg,time)
 }
-window.Toast = Toast
 module.exports.Toast = Toast

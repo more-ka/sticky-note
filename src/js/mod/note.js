@@ -2,7 +2,10 @@ require("less/note.less");
 
 var Toast = require("./toast.js").Toast;
 var Event = require("mod/event.js");
-
+window.onbeforeunload = function(){
+  document.documentElement.scrollTop = 0;  //ie下
+  document.body.scrollTop = 0;  //非ie
+}
 function Note(opts) {
   this.initOpts(opts);
   this.createNote();
@@ -59,7 +62,10 @@ Note.prototype = {
     this.$note.find(".username").text(this.opts.username);
     this.$note.find(".time").text(this.opts.time || this.getTime);
     this.opts.$ct.append(this.$note);
-    if (!this.id) this.$note.css("bottom", "10px"); //新增放到右边
+
+    if (!this.id) {
+      this.$note.css({"right":"10px","bottom":"240px",}); //新增放到右边
+    }
   },
 
   setStyle: function() {
@@ -92,17 +98,17 @@ Note.prototype = {
     //contenteditable没有 change 事件，所有这里做了模拟通过判断元素内容变动，执行 save
     $noteCt
       .on("focus", function() {
-        if ($noteCt.html() == "input here") $noteCt.html("");
-        $noteCt.data("before", $noteCt.html());
+        if ($noteCt.text() == "input here") $noteCt.text("");
+        $noteCt.data("before", $noteCt.text());
       })
       .on("blur paste", function() {
-        if ($noteCt.data("before") != $noteCt.html()) {
-          $noteCt.data("before", $noteCt.html());
+        if ($noteCt.data("before") != $noteCt.text()) {
+          $noteCt.data("before", $noteCt.text());
           self.setLayout();
           if (self.id) {
-            self.edit($noteCt.html());
+            self.edit($noteCt.text());
           } else {
-            self.add($noteCt.html());
+            self.add($noteCt.text());
           }
         }
       });
