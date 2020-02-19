@@ -1,8 +1,16 @@
+/*
+ * @Author: your name
+ * @Date: 2019-10-18 19:13:47
+ * @LastEditTime: 2020-02-19 14:50:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \stciky-note\routes\api.js
+ */
 var express = require("express");
 var router = express.Router();
 var Note = require("../model/sqlite.js").Note;
 
-/* GET users listing. */
+/* GET users list. */
 router.get("/notes", function(req, res, next) {
   var query = { raw: true };
   if (req.session.user) {
@@ -48,6 +56,7 @@ router.post("/notes/delete", function(req, res, next) {
   if (!req.session.user) {
     return res.send({ status: 1, errorMsg: "请登录" });
   }
+  console.log('id:',req.body.id)
   Note.destroy({ where: { id: req.body.id } })
     .then(function() {
       res.send({ status: 0 });
