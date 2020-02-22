@@ -18,11 +18,25 @@ router.get("/logout", function(req, res) {
 router.get('/github',
   passport.authenticate('github'));
 passport.use(
+  // 本地调试locolhost:3000
+  // new GitHubStrategy(
+  //   {
+  //     clientID: "53a2b5af338b03ee60cc",
+  //     clientSecret: "0ba96bcd7886dc99122b2c5c875440817d928ac7",
+  //     callbackURL: "http://localhost/:3000/auth/github/callback"
+  //   },
+  //   function(accessToken, refreshToken, profile, done) {
+  //     // User.findOrCreate({ githubId: profile.id }, function (err, user) {
+  //     // });
+  //     done(null, profile);
+  //   }
+  // ) 
+  // 云服务器
   new GitHubStrategy(
     {
-      clientID: "53a2b5af338b03ee60cc",
-      clientSecret: "0ba96bcd7886dc99122b2c5c875440817d928ac7",
-      callbackURL: "http://localhost:3000/auth/github/callback"
+      clientID: "739f101197e8fe8e5317",
+      clientSecret: "c8c143aba2b685b15b018a8a03e4cb26e92224a7",
+      callbackURL: "http://118.25.89.253/:3000/auth/github/callback"
     },
     function(accessToken, refreshToken, profile, done) {
       // User.findOrCreate({ githubId: profile.id }, function (err, user) {
