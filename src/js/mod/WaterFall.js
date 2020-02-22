@@ -8,7 +8,8 @@ var WaterFall = (function(){
     $items = $content.children();
 
     var nodeWidth = $items.outerWidth(true),
-      colNum = parseInt(($(window).width()-400)/nodeWidth),
+    
+      colNum = parseInt(($(window).width())/nodeWidth),
       colSumHeight = [];
 
     for(var i = 0; i<colNum;i++){
