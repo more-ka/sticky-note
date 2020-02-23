@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-10-20 22:02:15
+ * @LastEditTime: 2020-02-22 22:00:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \stciky-note\src\js\mod\waterfall.js
+ */
 
 var WaterFall = (function(){
   var $content;
@@ -9,7 +17,7 @@ var WaterFall = (function(){
 
     var nodeWidth = $items.outerWidth(true),
     
-      colNum = parseInt(($(window).width())/nodeWidth),
+      colNum = parseInt(($(window).width()-90)/nodeWidth),
       colSumHeight = [];
 
     for(var i = 0; i<colNum;i++){

@@ -2,7 +2,7 @@ var path = require('path')
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(undefined, undefined, undefined, {
-  host: "localhost",
+  host: "118.25.89.253",
   dialect: "sqlite",
   storage: path.join(__dirname,"../database/database.sqlite")
 });
