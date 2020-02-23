@@ -10,6 +10,8 @@ $(".add-note").on("click", function() {
   NoteManager.add();
 });
 
+$('.goTop').click(function(){$('html,body').animate({scrollTop: '0px'}, 300);});
+
 Event.on("waterfall", function() {
   WaterFall.init($("#content"));
 });

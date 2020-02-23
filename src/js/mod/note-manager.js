@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-02-23 16:27:38
+ * @LastEditTime: 2020-02-23 17:31:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \sticky-note\src\js\mod\note-manager.js
+ */
 var Toast = require('./toast.js').Toast;
 var Note = require('./note.js').Note;
 var Toast = require('./toast.js').Toast;
@@ -18,7 +26,6 @@ var NoteManager = (function(){
                 time: article.createTime
               });
           });
-
           Event.fire('waterfall');
         }else{
           Toast(ret.errorMsg);
