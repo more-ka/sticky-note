@@ -1,8 +1,16 @@
+/*
+ * @Author: your name
+ * @Date: 2020-02-23 16:27:38
+ * @LastEditTime: 2020-02-24 13:55:38
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \sticky-note\model\sqlite.js
+ */
 var path = require('path')
 const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(undefined, undefined, undefined, {
-  host: "118.25.89.253",
+  host: "localhost",
   dialect: "sqlite",
   storage: path.join(__dirname,"../database/database.sqlite")
 });
