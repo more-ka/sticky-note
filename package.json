@@ -30,6 +30,6 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "onchange": "^6.1.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.12"
   }
 }
